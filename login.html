@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="public/styles.css" rel="stylesheet">
+    <title>Login Form</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container-fluid mx-4 my-1">
+            <a class="navbar-brand fw-bold" href="index.html">
+            Contact App
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="box">
+                    <form action="#" method="POST" id="loginForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="fw-bold">Login</h3>
+                            </div>
+                        </div>
+                        <hr>
+                         <div class="my-3">
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="loginEmail" name="email" required>
+                        </div> 
+                        <div class="my-3">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="loginPassword" name="password" required>
+                        </div>
+                        
+                        <div class="my-3">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="Login" value="Login">
+                        </div>
+                        <div class="text-center">
+                            <span>Do not have an account? </span><a href="register.html">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark mt-5 footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-secondary px-5 py-md-4 text-md-start text-center mt-3">
+                    <i class="fa-regular fa-copyright"></i>
+                    Copyright Contact App - All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-light px-5 py-md-4 text-md-end text-center mt-3">
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="public/auth.js"></script>
+
+</body>
+</html>

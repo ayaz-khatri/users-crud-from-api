@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="public/styles.css" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container-fluid mx-4 my-1">
+
+            <!-- Left side -->
+            <a class="navbar-brand fw-bold" href="students.html">
+            Students Data
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Right side -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link px-3 py-1" href="#" onclick="logout()">
+                    Logout
+                </a>
+                </li>
+            </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="box">
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <h3 class="fw-bold my-0">Students</h3>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end gap-2">
+                            <input type="text" id="searchInput" placeholder="Search by first/last name" class="form-control w-50">
+                            <button type="button" class="btn btn-outline-success" onclick="fetchAll()" title="Refresh"><i class="fa fa-refresh"></i></button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addModal" title="Add Student"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="table-responsive crud-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="sticky-header">
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>First Name</th> 
+                                <th>Last Name</th> 
+                                <th>Email</th> 
+                                <th>Phone</th>
+                                <th>Action</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTable">
+                            <tr>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show Modal -->
+    <div class="modal fade" id="showModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Show Student</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td class="text-center" colspan="2">
+                                <img src="" class="img img-fluid" id="showImage">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-secondary">First Name</td>
+                            <td id="showFirstName">Ayaz</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-secondary">Last Name</td>
+                            <td id="showLastName">Khatri</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-secondary">Email</td>
+                            <td id="showEmail">ayaz@gamil.com</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-secondary">Phone</td>
+                            <td id="showPhone">03123456789</td>
+                        </tr>
+                    </table>
+                </div>      
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Student</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST" enctype="multipart/form-data" id="addForm">
+                        <div class="my-1">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="first_name" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="last_name" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" name="phone" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="profile_pic" required>
+                        </div>
+                        <div class="my-3">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="create" value="Add">
+                        </div>
+                    </form>
+                </div>      
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Student</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST" enctype="multipart/form-data" id="editForm">
+                        <div class="my-1">
+                            <label>First Name</label>
+                            <input type="hidden" class="form-control" id="id" name="id" required>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="my-3">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="profile_pic">
+                        </div>
+                        <div class="my-3">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="update" value="Update">
+                        </div>
+                    </form>
+                </div>      
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark mt-5 footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-secondary px-5 py-md-4 text-md-start text-center mt-3">
+                    <i class="fa-regular fa-copyright"></i>
+                    Copyright Contact App - All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-light px-5 py-md-4 text-md-end text-center mt-3">
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="public/script.js"></script>
+</body>
+</html>

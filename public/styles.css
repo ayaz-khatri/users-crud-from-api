@@ -1,0 +1,248 @@
+/* -------------------------------------------------------------------------- */
+/*                                Custom styles                               */
+/* -------------------------------------------------------------------------- */
+
+
+/* ------------------------ Imports font from Google ------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+:root 
+{
+
+/* -------------------------------- Black Theme ------------------------------- */
+--mainColor: #292321;
+--bodyBackgroundColor: #f8f9fa;
+--buttonHoverColor: #0a0a0a;
+--formControlFocusBorderColor: rgba(33, 37, 41, 0.3);
+--formControlFocusShadowColor: rgba(33, 37, 41, 0.6);
+--navbarBackgroundColor: #000000;
+--footerBackgroundColor: #000000;
+
+/* -------------------------------- Ocean Breeze Theme ------------------------- */
+/* --mainColor: #008080;
+--bodyBackgroundColor: #e0f7fa;
+--buttonHoverColor: #006666;
+--formControlFocusBorderColor: rgba(0, 128, 128, 0.3);
+--formControlFocusShadowColor: rgba(0, 128, 128, 0.6);
+--navbarBackgroundColor: #004d40;
+--footerBackgroundColor: #004d40; */
+
+/* -------------------------------- Red Theme ------------------------------- */
+/* --mainColor: #e63946;
+--bodyBackgroundColor: #fff5f5;
+--buttonHoverColor: #d62828;
+--formControlFocusBorderColor: rgba(230, 57, 70, 0.3);
+--formControlFocusShadowColor: rgba(230, 57, 70, 0.6);
+--navbarBackgroundColor: #661a1a;
+--footerBackgroundColor: #661a1a; */
+
+/* ------------------------------- Blue Theme ------------------------------- */
+/* --mainColor: #1d4ed8;
+--bodyBackgroundColor: #ebf5ff;
+--buttonHoverColor: #1e40af;
+--formControlFocusBorderColor: rgba(29, 78, 216, 0.3);
+--formControlFocusShadowColor: rgba(29, 78, 216, 0.6);
+--navbarBackgroundColor: #0a1e3f;
+--footerBackgroundColor: #0a1e3f; */
+
+  /* ------------------------------- Green Theme ------------------------------ */
+  /* --mainColor: #198754;
+  --bodyBackgroundColor: #f6fffa;
+  --buttonHoverColor: #157347;
+  --formControlFocusBorderColor: rgba(25, 135, 84, 0.3);
+  --formControlFocusShadowColor: rgba(25, 135, 84, 0.6);
+  --navbarBackgroundColor: #14321b;
+  --footerBackgroundColor: #14321b; */
+
+  /* ------------------------------ Purple Theme ------------------------------ */
+  /* --mainColor: #6f42c1;
+  --bodyBackgroundColor: #faf5ff;
+  --buttonHoverColor: #5a33a3;
+  --formControlFocusBorderColor: rgba(111, 66, 193, 0.3);
+  --formControlFocusShadowColor: rgba(111, 66, 193, 0.6);
+  --navbarBackgroundColor: #201732;
+  --footerBackgroundColor: #201732; */
+
+  /* ------------------------------ Orange Theme ------------------------------ */
+  /* --mainColor: #fd7e14;
+  --bodyBackgroundColor: #fff7e6;
+  --buttonHoverColor: #e06b12;
+  --formControlFocusBorderColor: rgba(253, 126, 20, 0.3);
+  --formControlFocusShadowColor: rgba(253, 126, 20, 0.6);
+  --navbarBackgroundColor: #402a15;
+  --footerBackgroundColor: #402a15; */
+}
+
+
+/* ------------------------------ All selector ------------------------------ */
+*
+{
+  font-family: 'Cabin', Helvetica, sans-serif;
+}
+
+
+/* ---------------------------------- Body ---------------------------------- */
+body 
+{
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  background-color: var(--bodyBackgroundColor);
+}
+
+/* ----------------------------- Navigation Bar ----------------------------- */
+.navbar
+{
+  background-color: var(--navbarBackgroundColor) !important;
+}
+.navbar .nav-item .nav-link::after 
+{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ebe4e4;
+  transition: width .3s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar .nav-item .nav-link:hover::after 
+{
+  width: 100%;
+}
+
+.navbar .color-white
+{
+  border: 1px solid #ffffff !important;
+}
+
+.navbar .color-white:hover
+{
+  border: 1px solid #ffffff !important;
+  background-color: var(--mainColor) !important;
+}
+
+.navbar .nav-item .login-btn:hover::after
+{
+  width: 0;
+}
+
+.navbar-profile-image
+{
+  width: 35px;
+  height: 35px;
+}
+
+.color-white:hover a
+{
+  color: #ffffff !important;
+}
+
+.dropdown-menu a:focus 
+{
+  background-color: var(--mainColor) !important; 
+}
+
+
+/* ------------------------------- Box Shadow ------------------------------- */
+.box
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+
+/* ------------------------------- hr (Horizontal Line) ------------------------------- */
+hr
+{
+  border: 1.5px solid var(--mainColor);
+  opacity: 75%;
+}
+
+
+/* ------------------------------- Form Elements ------------------------------- */
+
+.form-control:focus {
+  border-color: var(--formControlFocusBorderColor) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--formControlFocusShadowColor) !important;
+}
+
+/* ------------------------ Custom CSS to create theme ----------------------- */
+.btn-danger, .btn-danger:focus
+{
+  background-color: var(--mainColor) !important;
+  border-color: var(--mainColor) !important;
+}
+.btn-outline-danger
+{
+  border-color: var(--mainColor) !important;
+}
+.btn-danger:hover, .btn-outline-danger:hover
+{
+  background-color: var(--buttonHoverColor) !important;
+  border-color: var(--buttonHoverColor) !important;
+  color: #ffffff !important;
+}
+.text-danger, .btn-outline-danger
+{
+  color: var(--mainColor) !important;
+}
+
+
+/* -------------------------------- CRUD table -------------------------------- */
+.crud-table
+{
+  min-height: 250px !important;
+  max-height: 550px !important;
+}
+
+.crud-table img
+{
+  width: 50px;
+  height: 50px;
+}
+
+.crud-table .action-column
+{
+  white-space: nowrap;
+}
+
+.btn-trash
+{
+  background-color: #dc3545 !important;
+  color:#fff !important;
+}
+
+.btn-trash:hover 
+{
+  background-color: #c82333 !important;
+}
+
+.crud-table .sticky-header th 
+{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #eeeeee;
+}
+/* --------------------------------- Footer --------------------------------- */
+.footer 
+{
+  background-color: var(--footerBackgroundColor) !important;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer .social-icon i 
+{
+  transition: color 0.3s ease;
+}
+
+.footer .social-icon:hover i 
+{
+  color: #ffffff;
+}
